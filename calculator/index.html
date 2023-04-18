@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="sty;e.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="labelling">
+            <p>BASIO</p>
+            <p>Fully !Scientific</p>
+        </div>
+        <div class="c-display">
+            <p id="prevval">
+
+            </p>
+            <p id="log">
+                0=3
+            </p>
+        </div>
+        <div class="btns">
+            <div class="row">
+                <div onclick="clicked(event)" class="btn">7</div>
+                <div onclick="clicked(event)" class="btn">8</div>
+                <div onclick="clicked(event)" class="btn">9</div>
+                <div class="btn s" onclick="clearText()">C</div>
+                <div class="btn s" onclick="backSpace();">B</div>
+            </div>
+            <div class="row">
+                <div onclick="clicked(event)" class="btn">4</div>
+                <div onclick="clicked(event)" class="btn">5</div>
+                <div onclick="clicked(event)" class="btn">6</div>
+                <div onclick="calc(event)" class="btn s">/</div>
+                <div onclick="calc(event)" class="btn s">*</div>
+            </div>
+            <div class="row">
+                <div onclick="clicked(event)" class="btn">1</div>
+                <div onclick="clicked(event)" class="btn">2</div>
+                <div onclick="clicked(event)" class="btn">3</div>
+                <div onclick="calc(event)" class="btn s">+</div>
+                <div onclick="calc(event)" class="btn s">-</div>
+            </div>
+            <div class="row">
+                <div onclick="clicked(event)" class="btn">0</div>
+                <div class="btn equals" onclick="calculate();">=</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
