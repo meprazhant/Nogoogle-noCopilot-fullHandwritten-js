@@ -7,6 +7,9 @@ function drawchess() {
         var div = document.createElement("div")
         div.classList.add("chessRow")
         for (var j = 0; j < 8; j++) {
+            // useTimerout
+
+
             if (i % 2 == 0) {
                 if (j % 2 == 0) {
                     var black = document.createElement('div')

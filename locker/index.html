@@ -6,7 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Projects</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(128, 84, 84);
+            height: 100vh;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .locker {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lock {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .l-curr {
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .l-next,
+        .l-prev {
+            padding: 8px;
+            background-color: #c6c6c6;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        .l-next:hover,
+        .l-prev:hover {
+            transform: scale(1.2);
+        }
+
+        button {
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #000;
+            transition: 0.3s;
+            display: none;
+        }
+
+        button:hover {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 
 <body>
@@ -41,7 +104,68 @@
     <button id="khuljaa">Khul Jaa Sim Sim</button>
 
 
-    <script src="script.js"></script>
+    <script>
+        var ALphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+        function nextalpha(a) {
+            var cur = document.getElementById("cur" + a);
+            var curindex = ALphabet.indexOf(cur.innerText);
+            if (curindex == 25) {
+                curindex = 0;
+            }
+            cur.innerText = ALphabet[curindex + 1];
+            var next = document.getElementById("next" + a);
+            var prev = document.getElementById("prev" + a);
+            prev.innerText = ALphabet[curindex];
+            next.innerText = ALphabet[curindex + 2];
+
+            if (curindex == 24) {
+                next.innerText = "A";
+            }
+            if (curindex == 0) {
+                prev.innerText = "Z";
+            }
+
+            checksum();
+
+
+        }
+
+        function prevalpha(a) {
+            var cur = document.getElementById("cur" + a);
+            var curindex = ALphabet.indexOf(cur.innerText);
+            if (curindex == 0) {
+                curindex = 25;
+            }
+            cur.innerText = ALphabet[curindex - 1];
+            var next = document.getElementById("next" + a);
+            var prev = document.getElementById("prev" + a);
+            prev.innerText = ALphabet[curindex - 2];
+            next.innerText = ALphabet[curindex];
+            if (curindex == 1) {
+                prev.innerText = "Z";
+            }
+            if (curindex == 25) {
+                next.innerText = "A";
+            }
+            checksum();
+        }
+
+        function checksum() {
+            var cur1 = document.getElementById("cur1").innerText;
+            var cur2 = document.getElementById("cur2").innerText;
+            var cur3 = document.getElementById("cur3").innerText;
+            var cur4 = document.getElementById("cur4").innerText;
+            var cur5 = document.getElementById("cur5").innerText;
+            var khuljaa = document.getElementById("khuljaa");
+
+            var output = (cur1 + cur2 + cur3 + cur4 + cur5);
+
+            if (output == "TUDUM") {
+                khuljaa.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
 

@@ -7,6 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Projects</title>
     <link rel="stylesheet" href="style.css">
+    <Style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(84, 128, 120);
+            height: 100vh;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .card {
+            height: 30px;
+            padding: 10px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10%;
+            cursor: pointer;
+            transition: ease-in-out .2s;
+        }
+
+        .card:hover {
+            transform: scale(1.08);
+        }
+
+        .chess {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chessRow {
+            height: 50px;
+            background-color: red;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .black {
+            height: 50px;
+            width: 50px;
+            background-color: #000;
+        }
+
+        .white {
+            height: 50px;
+            width: 50px;
+            background-color: #fff;
+        }
+    </Style>
 </head>
 
 <body>
@@ -18,7 +72,51 @@
 
 
 
-    <script src="script.js"></script>
+    <script>
+        function drawchess() {
+            var chess = document.getElementById("chess")
+
+            for (var i = 0; i < 8; i++) {
+
+
+                var div = document.createElement("div")
+                div.classList.add("chessRow")
+                for (var j = 0; j < 8; j++) {
+                    // useTimerout
+
+
+                    if (i % 2 == 0) {
+                        if (j % 2 == 0) {
+                            var black = document.createElement('div')
+                            black.classList.add("black")
+                            div.append(black)
+                        } else {
+                            var white = document.createElement('div')
+                            white.classList.add("white")
+                            div.append(white)
+                        }
+                    } else {
+                        if (j % 2 == 0) {
+                            var white = document.createElement('div')
+                            white.classList.add("white")
+                            div.append(white)
+                        } else {
+
+
+                            var black = document.createElement('div')
+                            black.classList.add("black")
+                            div.append(black)
+                        }
+                    }
+                }
+
+                chess.append(div)
+
+            }
+
+
+        }
+    </script>
 
 </body>
 
