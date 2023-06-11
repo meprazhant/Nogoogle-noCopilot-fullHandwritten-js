@@ -10,7 +10,11 @@ body {
     width: 100%;
     gap: 10px;
 }
-
+.btn{
+    padding:8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
 .card {
     height: 30px;
     padding: 10px;

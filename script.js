@@ -5,5 +5,6 @@ function nav(e) {
         window.location.href = "/chess"
     } else if (e == 3) {
         window.location.href = "/locker"
-    }
+    }else if(e==4)
+        location.href="/Word&CharCounter"
 }

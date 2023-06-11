@@ -1,6 +1,8 @@
 function drawchess() {
     var chess = document.getElementById("chess")
 
+    //added this line to remove previously build chess board
+    chess.innerHTML="";
     for (var i = 0; i < 8; i++) {
 
 
@@ -8,8 +10,6 @@ function drawchess() {
         div.classList.add("chessRow")
         for (var j = 0; j < 8; j++) {
             // useTimerout
-
-
             if (i % 2 == 0) {
                 if (j % 2 == 0) {
                     var black = document.createElement('div')
@@ -26,8 +26,6 @@ function drawchess() {
                     white.classList.add("white")
                     div.append(white)
                 } else {
-
-
                     var black = document.createElement('div')
                     black.classList.add("black")
                     div.append(black)
